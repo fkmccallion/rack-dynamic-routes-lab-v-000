@@ -6,8 +6,9 @@ class Application
 
     if req.path.match(/items/)
       item_name = req.path.split("/items/").last
-      binding.pry
+      
     else
+      binding.pry
       resp.status = 404
     end
 
