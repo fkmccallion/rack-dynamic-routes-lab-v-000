@@ -9,6 +9,7 @@ class Application
 
       price = @@items.select {|item| item.name == item_name}.first
       if price
+        binding.pry
         resp.write price.name
       else
         resp.status = 400
