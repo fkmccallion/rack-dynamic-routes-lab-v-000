@@ -7,7 +7,12 @@ class Application
     if req.path.match(/items/)
       item_name = req.path.split("/items/").last
 
-      item = @@items.select {|item| item.name == item_name}.first.price
+      price = @@items.select {|item| item.name == item_name}.first.price
+      if price 
+        resp.write price
+      else
+        resp.status = 400
+        resp.write "Item not found"
       #resp.write item.price
       binding.pry
     else
