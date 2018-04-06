@@ -6,7 +6,7 @@ class Application
 
     if req.path.match(/items/)
       item_name = req.path.split("/items/").last
-      price = @@items.collect {|item| item.name == item_name}
+      price = @@items.select {|item| item.name == item_name}
       binding.pry
     else
       resp.status = 404
