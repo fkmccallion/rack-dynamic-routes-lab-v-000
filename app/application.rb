@@ -5,11 +5,10 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match(/items/)
-      @@items.each do |item|
-        resp.write "#{item}\n"
-      end
+      item_name = req.path.split("/items/").last
+      binding.pry
     else
-      resp.write "Path Not Found"
+      resp.status = 404
     end
 
     resp.finish
