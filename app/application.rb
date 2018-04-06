@@ -13,6 +13,7 @@ class Application
       else
         resp.status = 400
         resp.write "Item not found"
+      end
       #resp.write item.price
       binding.pry
     else
