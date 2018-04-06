@@ -6,7 +6,7 @@ class Application
 
     if req.path.match(/items/)
       item_name = req.path.split("/items/").last
-      item = @@items.select {|item| item.name == item_name}.flatten
+      item = @@items.select {|item| item.name == item_name}.first
       binding.pry
       item.price
     else
