@@ -8,8 +8,8 @@ class Application
       item_name = req.path.split("/items/").last
 
     else
-      binding.pry
       resp.status = 404
+      resp.status
     end
 
     resp.finish
