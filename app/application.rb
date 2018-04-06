@@ -10,7 +10,7 @@ class Application
       price = @@items.select {|item| item.name == item_name}.first
       if price
         binding.pry
-        resp.write price.name
+        resp.write price.price
       else
         resp.status = 400
         resp.write "Item not found"
